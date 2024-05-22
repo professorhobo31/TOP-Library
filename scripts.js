@@ -36,6 +36,26 @@ function Book(title, author, pages, read) {
         content1.textContent = `${this.title}`;
         container.appendChild(content1);
         // alert("newrow enabled");
+        const content2 = document.createElement('div');
+        content2.textContent = `${this.author}`;
+        container.appendChild(content2);
+
+        const content3 = document.createElement('div');
+        content3.textContent = `${this.title}`;
+        container.appendChild(content3);
+
+        const content4 = document.createElement('div');
+        content4.textContent = `${this.pages}`;
+        container.appendChild(content4);
+
+        const content5 = document.createElement('div');
+        if (this.read === true) {
+            content5.textContent = "Yes";
+        }
+        else {
+            content5.textContent = "No";
+        }
+        container.appendChild(content5);
     }
 }
 
@@ -44,6 +64,11 @@ const container = document.getElementById("dataContainer");
 
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
 const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto y Pedro Saborido', '237', true);
+const book3 = new Book('World War Z', 'Max Brooks', '457', true);
+const book4 = new Book('El Eternauta', 'Hector G Oesterheld y Francisco Solano Lopez', "351", false)
 book1.bookInfo();
 book2.bookInfo();
 book1.newRow();
+book2.newRow();
+book3.newRow();
+book4.newRow();
