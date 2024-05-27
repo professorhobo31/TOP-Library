@@ -57,18 +57,29 @@ function Book(title, author, pages, read) {
         }
         container.appendChild(content5);
     }
+
+        myLibrary.push(this);
 }
 
 const container = document.getElementById("dataContainer");
 
+/**
+ * @type {array} - Saves all books introduced by the user.
+ */
+const myLibrary = [];
+
+function addBookToLibrary() {
+    // do stuff here
+  }
+
 
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
-const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto y Pedro Saborido', '237', true);
+const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
 const book3 = new Book('World War Z', 'Max Brooks', '457', true);
-const book4 = new Book('El Eternauta', 'Hector G Oesterheld y Francisco Solano Lopez', "351", false)
+const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', "351", false)
 book1.bookInfo();
 book2.bookInfo();
-book1.newRow();
 book2.newRow();
-book3.newRow();
+book1.newRow();
 book4.newRow();
+book3.newRow();

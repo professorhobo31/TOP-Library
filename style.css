@@ -1,8 +1,22 @@
 .container {
     display: inline-grid;
-    border: 2px solid grey;
-    grid-template-columns: repeat(5, 150px);
+    /* border: 2px solid black; */
+    grid-template-columns: repeat(5, 175px);
     grid-template-rows: 20px;
-    grid-auto-rows: 20px;
-    justify-items: center;
+    /* grid-auto-rows: 20px; */
+    text-align: center;
+}
+
+.header {
+    background-color: lightgray;
+    border-bottom: 2px solid gray;
+}
+
+#addBookBtn {
+    border-radius: 40px;
+    background-color: rgb(80, 80, 123);
+    color: aliceblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.75em;
+    width: 90px;
 }
