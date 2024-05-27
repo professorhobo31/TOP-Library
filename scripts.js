@@ -30,7 +30,7 @@ function Book(title, author, pages, read) {
         const content1 = document.createElement('div');
         content1.textContent = `${this.title}`;
         container.appendChild(content1);
-        // alert("newrow enabled");
+        // alert('newrow enabled');
         const content2 = document.createElement('div');
         content2.textContent = `${this.author}`;
         container.appendChild(content2);
@@ -45,28 +45,30 @@ function Book(title, author, pages, read) {
 
         const content5 = document.createElement('div');
         if (this.read === true) {
-            content5.textContent = "Yes";
+            content5.textContent = 'Yes';
         }
         else {
-            content5.textContent = "No";
+            content5.textContent = 'No';
         }
         container.appendChild(content5);
     }
 }
 
+const dialog = document.getElementById('modal')
 function newBookPopup() {
-    alert('Popup works')
+    //alert('Popup works')
+    dialog.showModal();
 }
 
-const container = document.getElementById("dataContainer");
-const newBookButton = document.getElementById("addBookBtn");
+const container = document.getElementById('dataContainer');
+const newBookButton = document.getElementById('addBookBtn');
 newBookButton.addEventListener('click', newBookPopup);
 
 //in this strip I should add  the code that creates new book entries
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
 const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
 const book3 = new Book('World War Z', 'Max Brooks', '457', true);
-const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', "351", false);
+const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
 book2.newRow();
 book1.newRow();
 book4.newRow();
