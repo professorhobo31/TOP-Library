@@ -19,10 +19,62 @@
     </div>
     <button id="addBookBtn">NEW BOOK</button>
     <dialog id="modal">
-        <div>Modal shows up.</div>
-        <form method="dialog">
-            <button>OK</button>
-        </form>
+        <div id="signupContainer">
+            <div id="leftContainer">
+                <p id="logo">
+                    <img src="images/odin-lined.png" alt="Odin_Logo" height="90px"> ODIN PROJECT
+                </p>
+                <p id="footer">
+                    Photo by <a
+                        href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                        Annie Spratt</a> on
+                    <a
+                        href="https://unsplash.com/es/fotos/vista-superior-de-plantas-suculentas-verdes-8mqOw4DBBSg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+                        Unsplash</a>
+                </p>
+            </div>
+
+            <div id="rightContainer">
+                <div id="topTextContainer">
+                    <p>
+                        This is a mockup form for a nonexistent webpage. Complete the information requested in the
+                        form, then press the button, this will add a new book into our table.
+                    </p>
+                    <p>If there's any bugs, you've seen NOTHING. </p>
+                    <p>Let's do this!</p>
+                </div>
+                <div id="formContainer">
+                    <form action="" method="post" id="signUpForm">
+                        <fieldset>
+                            <div>
+                                <label for="bookName">BOOK TITLE</label>
+                                <input type="text" name="bookName" id="bookName">
+                            </div>
+                            <div>
+                                <label for="author">AUTHOR'S NAME</label>
+                                <input type="text" name="author" id="author">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div>
+                                <label for="pages">PAGES</label>
+                                <input type="number" name="pages" id="pages">
+                            </div>
+                            <div>
+                                <label for="read">HAVE YOU READ IT?</label>
+                                <input type="checkbox" name="read" id="read">
+                            </div>
+                        </fieldset>
+
+                        <form method="dialog">
+                            <button>CLOSE</button>
+                        </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </dialog>
 </body>
 
