@@ -21,16 +21,12 @@
     <dialog id="modal">
         <div id="signupContainer">
             <div id="leftContainer">
-                <p id="logo">
-                    <img src="images/odin-lined.png" alt="Odin_Logo" height="90px"> ODIN PROJECT
-                </p>
                 <p id="footer">
                     Photo by <a
-                        href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-                        Annie Spratt</a> on
+                        href="https://unsplash.com/es/@henry_be?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Henry
+                        Be</a> on
                     <a
-                        href="https://unsplash.com/es/fotos/vista-superior-de-plantas-suculentas-verdes-8mqOw4DBBSg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-                        Unsplash</a>
+                        href="https://unsplash.com/es/fotos/estante-de-la-biblioteca-cerca-de-la-escalera-de-madera-negra-lc7xcWebECc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
                 </p>
             </div>
 
@@ -48,18 +44,18 @@
                         <fieldset>
                             <div>
                                 <label for="bookName">BOOK TITLE</label>
-                                <input type="text" name="bookName" id="bookName">
+                                <input type="text" name="bookName" id="bookName" placeholder="Harry Potter">
                             </div>
                             <div>
                                 <label for="author">AUTHOR'S NAME</label>
-                                <input type="text" name="author" id="author">
+                                <input type="text" name="author" id="author" placeholder="J.K.Rowling">
                             </div>
                         </fieldset>
 
                         <fieldset>
                             <div>
                                 <label for="pages">PAGES</label>
-                                <input type="number" name="pages" id="pages">
+                                <input type="number" name="pages" id="pages" placeholder="223">
                             </div>
                             <div>
                                 <label for="read">HAVE YOU READ IT?</label>
@@ -67,8 +63,10 @@
                             </div>
                         </fieldset>
 
+                        <button disabled="disabled">ADD BOOK</button>
+
                         <form method="dialog">
-                            <button>CLOSE</button>
+                            <button id="closeButton">CLOSE</button>
                         </form>
                     </form>
                 </div>

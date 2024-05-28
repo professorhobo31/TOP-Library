@@ -55,16 +55,6 @@ p+p+p {
     /* border: 2px solid yellow; */
 }
 
-#logo {
-    background-color: rgba(24, 24, 24, 0.5);
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Norse Bold', 'Times New Roman', Times, serif;
-    font-size: 45px;
-    margin-top: 35%;
-}
-
 #footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
@@ -73,13 +63,14 @@ p+p+p {
 
 #leftContainer {
     /* border: 1px solid red; */
-    background-image: url(images/annie-spratt-8mqOw4DBBSg-unsplash.jpg);
+    display: flex;
+    background-image: url(images/henry-be-lc7xcWebECc-unsplash.jpg);
     background-size: cover;
     width: 344px;
     flex-grow: 1;
     flex-shrink: 0;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -127,6 +118,7 @@ p+p+p {
 }
 
 form {
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -159,15 +151,16 @@ input:focus {
 }
 
 fieldset {
-    justify-content: space-between;
+    display: flex;
     padding-right: 20%;
-    padding-left: 5%;
+    padding-left: 10%;
     border: 0px;
 }
 
 fieldset>div {
     display: flex;
     flex-direction: column;
+    margin-bottom: 8px;
 }
 
 #bottomContainer {
@@ -205,6 +198,13 @@ button {
     font-size: 12px;
     justify-content: center;
     align-items: center;
+}
+
+#closeButton {
+    position: relative;
+    width: 100px;
+    left: 75%;
+    background-color: rgb(109, 72, 72);
 }
 
 #bottomContainer>p {
