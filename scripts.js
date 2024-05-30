@@ -30,7 +30,7 @@ function addToLibrary() {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
+    let read = document.getElementById('read').checked;
     return new Book(title, author, pages, read);
 }
 
@@ -72,13 +72,14 @@ function modalPopup() {
 
 const container = document.getElementById('dataContainer');
 
-const newBookButton = document.getElementById('addBookBtn');
-newBookButton.addEventListener('click', modalPopup);
+const openModalButton = document.getElementById('addBookBtn');
+openModalButton.addEventListener('click', modalPopup);
 
-const form = document.getElementById('signUpForm');
-form.addEventListener('submit', function(event) {
+const form = document.getElementById('submitButton');
+form.addEventListener('click', function(event) {
     event.preventDefault;
     addToLibrary();
+    dialog.close();
 })
 
 // const submitButton = document.getElementById('submitButton');
