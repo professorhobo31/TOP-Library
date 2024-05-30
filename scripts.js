@@ -34,7 +34,7 @@ function addToLibrary() {
     return new Book(title, author, pages, read);
 }
 
-/**This function adds all the book info to a new row on our list, upon call. IN REWORK
+/**This function adds all the book info to a new row on our list, upon call.
      * @returns {div}
      */
 function newRow(book) {
@@ -64,6 +64,16 @@ function newRow(book) {
     container.appendChild(content5);
 }
 
+/**
+ * This funtion cycles through our book array and executes a function on a book-by-book basis
+ */
+function render() {
+    container.innerHTML = '';
+    myLibrary.forEach((book) => {
+        newRow(book);
+    })
+};
+
 const container = document.getElementById('dataContainer');
 
 const dialog = document.getElementById('modal');
@@ -77,6 +87,7 @@ const submitDataButton = document.getElementById('submitButton');
 submitDataButton.addEventListener('click', function (event) {
     event.preventDefault;
     addToLibrary();
+    render();
     dialog.close();
 })
 
@@ -85,13 +96,10 @@ closeModalButton.addEventListener('click', function (e) {
     dialog.close();
 })
 
-// const submitButton = document.getElementById('submitButton');
-// submitButton.addEventListener('click', addToLibrary());
-
-//in this strip I should add  the code that creates new book entries
+//added some pre-loaded books so it looks better and to test all is working
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
 const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
 const book3 = new Book('World War Z', 'Max Brooks', '457', true);
 const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
 console.log(myLibrary);
-//it should finish here
+render();
