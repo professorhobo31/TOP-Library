@@ -6,7 +6,7 @@
 /**
  * @type {array} - Saves all books introduced by the user.
  */
-const myLibrary = [];
+let myLibrary = [];
 
 /**This function creates book objects.
  * @param {string} title - Title of the book
@@ -31,14 +31,13 @@ function addToLibrary() {
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     let read = document.getElementById('read').value;
-    let book = new Book(title, author, pages, read);
-    console.log(book);
+    return new Book(title, author, pages, read);
 }
 
 /**This function adds all the book info to a new row on our list, upon call. IN REWORK
      * @returns {div}
      */
-this.newRow = function (book) {
+function newRow(book) {
     const content1 = document.createElement('div');
     content1.textContent = `${book.title}`;
     container.appendChild(content1);
@@ -72,10 +71,18 @@ function modalPopup() {
 }
 
 const container = document.getElementById('dataContainer');
+
 const newBookButton = document.getElementById('addBookBtn');
 newBookButton.addEventListener('click', modalPopup);
 
-const submitButton = document.getElementById('submitButton');
+const form = document.getElementById('signUpForm');
+form.addEventListener('submit', function(event) {
+    event.preventDefault;
+    addToLibrary();
+})
+
+// const submitButton = document.getElementById('submitButton');
+// submitButton.addEventListener('click', addToLibrary());
 
 //in this strip I should add  the code that creates new book entries
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
