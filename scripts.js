@@ -1,6 +1,6 @@
 //The main purpose of our scripts will be threefold. Adding a button on the side of each moused-over row to
 //have the ability of deleting books from the list. Having a working button than, when pressed, brings up a
-//form to enter the info of a new book. Handling the output of the form to, instead of sending the data to
+//submitDataButton to enter the info of a new book. Handling the output of the submitDataButton to, instead of sending the data to
 //a non-existing server, add a new row w/the info of the book.
 
 /**
@@ -24,7 +24,7 @@ function Book(title, author, pages, read) {
 }
 
 /**
- * This function adds a new book to our array upon press of a button, after filling up the form.
+ * This function adds a new book to our array upon press of a button, after filling up the submitDataButton.
  */
 function addToLibrary() {
     let title = document.getElementById('title').value;
@@ -64,21 +64,24 @@ function newRow(book) {
     container.appendChild(content5);
 }
 
-const dialog = document.getElementById('modal')
-function modalPopup() {
-    //alert('Popup works')
-    dialog.showModal();
-}
-
 const container = document.getElementById('dataContainer');
 
-const openModalButton = document.getElementById('addBookBtn');
-openModalButton.addEventListener('click', modalPopup);
+const dialog = document.getElementById('modal');
 
-const form = document.getElementById('submitButton');
-form.addEventListener('click', function(event) {
+const openModalButton = document.getElementById('addBookBtn');
+openModalButton.addEventListener('click', function (e) {
+    dialog.showModal();
+});
+
+const submitDataButton = document.getElementById('submitButton');
+submitDataButton.addEventListener('click', function (event) {
     event.preventDefault;
     addToLibrary();
+    dialog.close();
+})
+
+const closeModalButton = document.getElementById('closeButton');
+closeModalButton.addEventListener('click', function (e) {
     dialog.close();
 })
 
@@ -90,5 +93,5 @@ const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
 const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
 const book3 = new Book('World War Z', 'Max Brooks', '457', true);
 const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
-console.log(myLibrary)
+console.log(myLibrary);
 //it should finish here
