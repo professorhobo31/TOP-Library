@@ -63,6 +63,14 @@ function newRow(book) {
         content5.textContent = 'No';
     }
     wrapper.appendChild(content5);
+    wrapper.addEventListener('click', (event) => {
+        if (content5.textContent === 'Yes') {
+            content5.textContent = 'No';
+        }
+        else {
+            content5.textContent = 'Yes';
+        }
+    })
     container.appendChild(wrapper);
 }
 
@@ -109,3 +117,10 @@ const book3 = new Book('World War Z', 'Max Brooks', '457', true);
 const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
 console.log(myLibrary);
 render();
+
+//trying to implement a remove button
+
+function removeButton(index) {
+    myLibrary.splice(index, 1);
+    render();
+}
