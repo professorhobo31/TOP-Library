@@ -9,18 +9,32 @@
 }
 
 
-.container {
+#header {
     display: inline-grid;
     /* border: 2px solid black; */
     grid-template-columns: repeat(5, 175px);
     grid-template-rows: 20px;
     /* grid-auto-rows: 20px; */
     text-align: center;
+    background-color: rgb(172, 172, 172);
 }
 
-.header {
+.container {
+    display: inline-grid;
+    /* border: 2px solid black; */
+    grid-template-columns: 1, 875px;
+    grid-template-rows: 20px;
+    /* grid-auto-rows: 20px; */
+    text-align: center;
+}
+
+.container>div {
+    display: grid;
+    grid-template-columns: repeat(5, 175px);
+}
+
+.container>div:nth-child(even) {
     background-color: lightgray;
-    border-bottom: 2px solid gray;
 }
 
 #addBookBtn {

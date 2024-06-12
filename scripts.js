@@ -24,7 +24,7 @@ function Book(title, author, pages, read) {
 }
 
 /**
- * This function adds a new book to our array upon press of a button, after filling up the submitDataButton.
+ * This function adds a new book to our array upon press of a button, after filling up the submitDataButton. (ADD CHECK FOR EMPTY VALUES)
  */
 function addToLibrary() {
     let title = document.getElementById('title').value;
@@ -35,24 +35,25 @@ function addToLibrary() {
 }
 
 /**This function adds all the book info to a new row on our list, upon call.
-     * @returns {div}
+     * @returns {div} (need to reorganize funtion to wrap rows in a div wrapper)
      */
 function newRow(book) {
+    const wrapper = document.createElement('div');
     const content1 = document.createElement('div');
     content1.textContent = `${book.title}`;
-    container.appendChild(content1);
-    // alert('newrow enabled');
+    wrapper.appendChild(content1);
+
     const content2 = document.createElement('div');
     content2.textContent = `${book.author}`;
-    container.appendChild(content2);
+    wrapper.appendChild(content2);
 
     const content3 = document.createElement('div');
     content3.textContent = `${book.title}`;
-    container.appendChild(content3);
+    wrapper.appendChild(content3);
 
     const content4 = document.createElement('div');
     content4.textContent = `${book.pages}`;
-    container.appendChild(content4);
+    wrapper.appendChild(content4);
 
     const content5 = document.createElement('div');
     if (book.read === true) {
@@ -61,7 +62,8 @@ function newRow(book) {
     else {
         content5.textContent = 'No';
     }
-    container.appendChild(content5);
+    wrapper.appendChild(content5);
+    container.appendChild(wrapper);
 }
 
 /**
@@ -89,6 +91,10 @@ submitDataButton.addEventListener('click', function (event) {
     addToLibrary();
     render();
     dialog.close();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
+    document.getElementById('read').checked = false;
 })
 
 const closeModalButton = document.getElementById('closeButton');
