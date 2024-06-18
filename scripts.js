@@ -72,16 +72,23 @@ function newRow(book) {
             content5.textContent = 'Yes';
         }
     })
+
     wrapper.addEventListener('mouseenter', (event) => { //breakthrough! inside this we should put code that makes button appear/disappear
         console.log('entered');
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete Book?';
+        deleteButton.addEventListener('mousedown', removeButton2);
         wrapper.appendChild(deleteButton);
-    });
+    });    
+
     wrapper.addEventListener('mouseleave', (event) => {
         wrapper.removeChild(wrapper.lastChild);
     })
     container.appendChild(wrapper);
+
+    function removeButton2(e) {
+        container.removeChild(wrapper);
+    }
 }
 
 /**
@@ -127,10 +134,3 @@ const book3 = new Book('World War Z', 'Max Brooks', '457', true);
 const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
 console.log(myLibrary);
 render();
-
-//trying to implement a remove button
-
-function removeButton(index) {
-    myLibrary.splice(index, 1);
-    render();
-}
