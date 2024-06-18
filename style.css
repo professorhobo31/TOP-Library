@@ -31,6 +31,8 @@
 .container>div {
     display: grid;
     grid-template-columns: repeat(5, 175px);
+    padding-right: 50px;
+    background-clip: content-box;
 }
 
 .container>div:nth-child(even) {

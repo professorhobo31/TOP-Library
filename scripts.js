@@ -35,7 +35,7 @@ function addToLibrary() {
 }
 
 /**This function adds all the book info to a new row on our list, upon call.
-     * @returns {div} (need to reorganize funtion to wrap rows in a div wrapper)
+     * @returns {div}
      */
 function newRow(book) {
     const wrapper = document.createElement('div');
@@ -63,6 +63,7 @@ function newRow(book) {
         content5.textContent = 'No';
     }
     wrapper.appendChild(content5);
+
     wrapper.addEventListener('click', (event) => {
         if (content5.textContent === 'Yes') {
             content5.textContent = 'No';
@@ -70,6 +71,15 @@ function newRow(book) {
         else {
             content5.textContent = 'Yes';
         }
+    })
+    wrapper.addEventListener('mouseenter', (event) => { //breakthrough! inside this we should put code that makes button appear/disappear
+        console.log('entered');
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete Book?';
+        wrapper.appendChild(deleteButton);
+    });
+    wrapper.addEventListener('mouseleave', (event) => {
+        wrapper.removeChild(wrapper.lastChild);
     })
     container.appendChild(wrapper);
 }
