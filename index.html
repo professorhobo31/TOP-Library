@@ -4,78 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TOP Library Project</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts.js" defer></script>
 </head>
 
 <body>
-    <div id="header">
-        <div class="header_elem">Book</div>
-        <div class="header_elem">Author</div>
-        <div class="header_elem">Title</div>
-        <div class="header_elem">Pages</div>
-        <div class="header_elem">Read</div>
-    </div>
-    <div class="container" id="dataContainer">
-    </div>
-    <button type="button" id="addBookBtn">NEW BOOK</button>
-    <dialog id="modal">
-        <div id="signupContainer">
-            <div id="leftContainer">
-                <p id="footer">
-                    Photo by <a
-                        href="https://unsplash.com/es/@henry_be?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Henry
-                        Be</a> on
-                    <a
-                        href="https://unsplash.com/es/fotos/estante-de-la-biblioteca-cerca-de-la-escalera-de-madera-negra-lc7xcWebECc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-                </p>
-            </div>
+    <button id="newBookButton">Add New Book</button>
+    <form action="" id="newBookInputForm" style="display: none;"> <!-- the "display:none" hids it till needed-->
+        <label for="title">Book Title</label>
+        <input type="text" id="title">
 
-            <div id="rightContainer">
-                <div id="topTextContainer">
-                    <p>
-                        This is a mockup form for a nonexistent webpage. Complete the information requested in the
-                        form, then press the button, this will add a new book into our table.
-                    </p>
-                    <p>If there's any bugs, you've seen NOTHING. </p>
-                    <p>Let's do this!</p>
-                </div>
-                <div id="formContainer">
-                    <form id="signUpForm">
-                        <fieldset>
-                            <div>
-                                <label for="title">BOOK TITLE</label>
-                                <input type="text" name="title" id="title" placeholder="Harry Potter">
-                            </div>
-                            <div>
-                                <label for="author">AUTHOR'S NAME</label>
-                                <input type="text" name="author" id="author" placeholder="J.K.Rowling">
-                            </div>
-                        </fieldset>
+        <label for="author">Book Author</label>
+        <input type="text" id="author">
 
-                        <fieldset>
-                            <div>
-                                <label for="pages">PAGES</label>
-                                <input type="number" name="pages" id="pages" placeholder="223">
-                            </div>
-                            <div>
-                                <label for="read">HAVE YOU READ IT?</label>
-                                <input type="checkbox" name="read" id="read">
-                            </div>
-                        </fieldset>
+        <label for="pages">Page Count</label>
+        <input type="number" id="pages">
 
-                        <button type="button" id="submitButton">ADD BOOK</button>
+        <label for="read">Read</label>
+        <input type="checkbox" id="read">
 
-                        <form method="dialog">
-                            <button type="button" id="closeButton">CLOSE</button>
-                        </form>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </dialog>
+        <input type="submit" value="Add Book">
+    </form>
 </body>
 
 </html>
