@@ -18,6 +18,36 @@ function Book(title, author, pages, read) {
     // the constructor...
 }
 
+/**
+ * Upon being called, this function removes all content from the container div we've set up as our library
+ * and it fills it with every object found currently in our myLibrary array. 
+ */
+function render() {
+    let container = document.getElementById('library');
+    container.innerHTML = '';
+    for (let i = 0; i < myLibrary.length; i++) {
+        let book = myLibrary[i];
+        let wrapperElement = document.createElement('div');
+        wrapperElement.setAttribute('class', 'bookCard');
+        wrapperElement.innerHTML = `
+        <div class="cardHeader">
+            <h3 class="bookTitle">${book.title}</h3>
+            <h5 class="author">by ${book.author}</h5>
+        </div>
+
+        <div class="cardBody">
+            <p>${book.pages} pages.</p>
+            <p>${book.read ? 'Read' : 'Not read yet'}</p>
+        </div>
+        `;
+        container.appendChild(wrapperElement);
+    }
+}
+
+/**
+ * This funtion takes the current values that have been input to our form, creates a new book object out of 
+ * that data and stores it to our myLibrary array.
+ */
 function addBookToLibrary() {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
@@ -26,7 +56,8 @@ function addBookToLibrary() {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     imputForm.style.display = 'none';
-    console.log(myLibrary);
+    render();
+    // console.log(myLibrary);
     // do stuff here
 }
 
@@ -46,14 +77,17 @@ imputForm.addEventListener('submit', (event) => {
  */
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', () => {
-    imputForm.style.display = 'block'; 
+    imputForm.style.display = 'block';
 })
 
 
 //added some pre-loaded books so it looks better and to test all is working
-// const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
-// const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
-// const book3 = new Book('World War Z', 'Max Brooks', '457', true);
-// const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
-// console.log(myLibrary);
-// render();
+const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
+const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
+const book3 = new Book('World War Z', 'Max Brooks', '457', true);
+const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
+myLibrary.push(book1);
+myLibrary.push(book2);
+myLibrary.push(book3);
+myLibrary.push(book4);
+render();
