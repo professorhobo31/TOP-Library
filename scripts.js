@@ -15,7 +15,20 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // the constructor...
+    // the constructor creates our book elements
+}
+//the course explains prototype editing as a more efficient way to add functions, compared to writing the
+//function withing our object constructor, so we'll use that here...
+Book.prototype.readToggle = function() { 
+    this.read = !this.read; //"replace this value with its opposite value"
+}
+
+//...however, we still need another function so that the universally available toggle function is used 
+//specifically on the object we click on. We create this, and then attach an event listener that can provide
+//us the index of the clicked element from withing the array loop of the render function.
+function toggleByIndex(index) {
+    myLibrary[index].readToggle();
+    render();
 }
 
 /**
@@ -38,8 +51,15 @@ function render() {
         <div class="cardBody">
             <p>${book.pages} pages.</p>
             <p>${book.read ? 'Read' : 'Not read yet'}</p>
+            <button class="removeButton" onclick="removeBook(${i})">Remove</button>
+            <button class="toggleButton" onclick="toggleByIndex(${i})">Toggle Read</button>
         </div>
         `;
+        //notice the button line. Staying WITHIN the for loop gives us an important advantage: during the
+        //execution of each loop we have access to the index number. This allows us to create and call
+        //functions that use the index to identify pieces of an array. Since in our case, the looping function
+        //is called back whenever we delete an item, it also automatically assigns new indexes no matter where
+        //or in what order we delete the books. 
         container.appendChild(wrapperElement);
     }
 }
@@ -61,8 +81,13 @@ function addBookToLibrary() {
     // do stuff here
 }
 
+function removeBook(index) {
+    myLibrary.splice(index,1);
+    render();
+}
+
 /**
- * This object variable containsthe input form, but is mostly used so that we can add the functionality we
+ * This object variable contains the input form, but is mostly used so that we can add the functionality we
  * need to the submit button
  */
 const imputForm = document.getElementById('newBookInputForm')
