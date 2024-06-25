@@ -28,13 +28,21 @@ label {
 
 input {
     margin-bottom: 4px;
+    background-color: lightgray;
+    width: 50%;
+    padding: 8px;
+    border: solid 3px rgb(135, 135, 135);
+    border-radius: 10px;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus {
-    border-color: rgb(45, 43, 43);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+input:hover {
+    box-shadow: 0px 0px 5px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px;
+    border: solid 3px rgb(120, 120, 120);
 }
 
 button {
@@ -53,4 +61,35 @@ button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+#library {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5%;
+    row-gap: 20px;
+}
+
+.bookCard {
+    border: solid 2px rgb(89, 109, 72);
+    border-radius: 10px;
+    width: 300px;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cardBody .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    margin: auto;
+}
+
+.buttonContainer button {
+    width: 90%;
 }

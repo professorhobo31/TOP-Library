@@ -33,7 +33,8 @@ function toggleByIndex(index) {
 
 /**
  * Upon being called, this function removes all content from the container div we've set up as our library
- * and it fills it with every object found currently in our myLibrary array. 
+ * and it fills it with every object found currently in our myLibrary array. Every card is created using a
+ * wrapper element and filling its empty html with bespoke code.
  */
 function render() {
     let container = document.getElementById('library');
@@ -51,8 +52,10 @@ function render() {
         <div class="cardBody">
             <p>${book.pages} pages.</p>
             <p>${book.read ? 'Read' : 'Not read yet'}</p>
-            <button class="removeButton" onclick="removeBook(${i})">Remove</button>
-            <button class="toggleButton" onclick="toggleByIndex(${i})">Toggle Read</button>
+            <div class=buttonContainer>
+                <button class="removeButton" onclick="removeBook(${i})">Remove</button>
+                <button class="toggleButton" onclick="toggleByIndex(${i})">Toggle Read</button>
+            </div>
         </div>
         `;
         //notice the button line. Staying WITHIN the for loop gives us an important advantage: during the
