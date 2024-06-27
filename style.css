@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Norse Bold';
+    font-family: "Norse Bold";
     src: url(fonts/Norse-Bold.otf);
 }
 
@@ -8,47 +8,75 @@
     src: url(fonts/Roboto/Roboto-Medium.ttf);
 }
 
+body {
+    background-color: lightgray;
+}
+
 form {
     margin-top: 10%;
     width: 500px;
     margin: 50px auto;
     text-align: center;
     padding: 20px;
-    border: 2px solid #ddd;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(55, 55, 55);
+    border: 3px solid whitesmoke;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
 }
 
 label {
     font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(212, 226, 238);
     font-size: 12px;
     margin-bottom: 10px;
     display: block;
 }
 
 input {
+    outline: none;
+    border: none;
+    font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 4px;
-    background-color: lightgray;
+    background-color: whitesmoke;
     width: 50%;
     padding: 8px;
-    border: solid 3px rgb(135, 135, 135);
     border-radius: 10px;
 }
 
 input:hover {
-    box-shadow: 0px 0px 5px;
+    border: 1px solid whitesmoke;
 }
 
 input:focus {
     outline: none;
-    box-shadow: 0px 0px 10px;
-    border: solid 3px rgb(120, 120, 120);
+    border: solid 2px whitesmoke;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+    border-radius: 4px;
+    background-color: rgb(135, 135, 135);
+    width: 20vh;
+}
+
+#read {
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 button {
-    position: relative;
-    left: 5%;
-    top: 15%;
+    display: block;
+    margin: auto;
     width: 150px;
     height: 30px;
     border-radius: 4px;
@@ -58,8 +86,6 @@ button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 800;
     font-size: 12px;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
@@ -91,5 +117,6 @@ button {
 }
 
 .buttonContainer button {
-    width: 90%;
+    position: static;
+    width: 7vw;
 }

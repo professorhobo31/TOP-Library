@@ -50,7 +50,7 @@ function render() {
         </div>
 
         <div class="cardBody">
-            <p>${book.pages} pages.</p>
+            <p>${book.pages} pages</p>
             <p>${book.read ? 'Read' : 'Not read yet'}</p>
             <div class=buttonContainer>
                 <button class="removeButton" onclick="removeBook(${i})">Remove</button>
