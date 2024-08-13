@@ -9,7 +9,18 @@
 }
 
 body {
+    margin: 0px;
     background-color: lightgray;
+}
+
+.header {
+    width: 120%;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    background-color: rgb(89, 109, 72);
+    font-size: 24px;
+    font-family: "Norse Bold", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke;
 }
 
 form {
