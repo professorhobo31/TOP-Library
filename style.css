@@ -15,6 +15,7 @@ body {
 form {
     margin-top: 10%;
     width: 500px;
+    height: 320px;
     margin: 50px auto;
     text-align: center;
     padding: 20px;
@@ -51,9 +52,9 @@ input {
     border-radius: 10px;
 }
 
-input:hover {
+/* input:hover {
     border: 1px solid whitesmoke;
-}
+} */
 
 input:focus {
     outline: none;
@@ -90,12 +91,13 @@ button {
 }
 
 #library {
-    margin-top: 5%;
+    margin: 5% auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 5%;
     row-gap: 20px;
+    justify-content: center;
 }
 
 .bookCard {

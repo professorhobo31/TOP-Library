@@ -10,22 +10,32 @@
  */
 let myLibrary = [];
 
+/**
+ * This is a CONSTRUCTOR FUNCTION, the main topic of this lesson. It creates an object that stores data of any
+ * book the user wants to log. They'll become our book elements of the myLibrary array
+ * @param {string} title  -The title of the book
+ * @param {string} author -The name of the author of the book
+ * @param {number} pages  -The total number of pages of the book
+ * @param {boolean} read  -Wether the user has read it or not 
+ */
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    // the constructor creates our book elements
 }
-//the course explains prototype editing as a more efficient way to add functions, compared to writing the
-//function withing our object constructor, so we'll use that here...
+
+//Since the course explains prototype editing as a more efficient way to add functions, compared to writing the
+//function within our object constructor, we'll use that here...
 Book.prototype.readToggle = function() { 
     this.read = !this.read; //"replace this value with its opposite value"
 }
 
-//...however, we still need another function so that the universally available toggle function is used 
+//...however, we still need another function so that this universally available toggle function is used 
 //specifically on the object we click on. We create this, and then attach an event listener that can provide
-//us the index of the clicked element from withing the array loop of the render function.
+//us the index of the clicked element from within the array loop of the render function.
+//The KEY to our page is the fact that the index number of each Book will be stored in each button within each
+//book card, allowing us to pass it along here:
 function toggleByIndex(index) {
     myLibrary[index].readToggle();
     render();
@@ -33,15 +43,15 @@ function toggleByIndex(index) {
 
 /**
  * Upon being called, this function removes all content from the container div we've set up as our library
- * and it fills it with every object found currently in our myLibrary array. Every card is created using a
+ * and it fills it with every element found currently in our myLibrary array. Every card is created using a
  * wrapper element and filling its empty html with bespoke code.
  */
 function render() {
     let container = document.getElementById('library');
     container.innerHTML = '';
     for (let i = 0; i < myLibrary.length; i++) {
-        let book = myLibrary[i];
-        let wrapperElement = document.createElement('div');
+        const book = myLibrary[i];
+        const wrapperElement = document.createElement('div');
         wrapperElement.setAttribute('class', 'bookCard');
         wrapperElement.innerHTML = `
         <div class="cardHeader">
@@ -58,9 +68,9 @@ function render() {
             </div>
         </div>
         `;
-        //notice the button line. Staying WITHIN the for loop gives us an important advantage: during the
-        //execution of each loop we have access to the index number. This allows us to create and call
-        //functions that use the index to identify pieces of an array. Since in our case, the looping function
+        //notice the button line. Using the for loop gives us a KEY advantage: during the execution of each loop
+        //we have access to the index number of each element. This allows us to create and call any number of
+        //functions that use the index to identify pieces of an array. Since in our case, this looping function
         //is called back whenever we delete an item, it also automatically assigns new indexes no matter where
         //or in what order we delete the books. 
         container.appendChild(wrapperElement);
@@ -72,18 +82,22 @@ function render() {
  * that data and stores it to our myLibrary array.
  */
 function addBookToLibrary() {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').checked;
-    let newBook = new Book(title, author, pages, read);
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').checked;
+    const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     imputForm.style.display = 'none';
     render();
     // console.log(myLibrary);
-    // do stuff here
 }
 
+/**
+ * This function is called by clicking the "Remove" button within each card. It removes the indexed element
+ * from our myLibrary array and re-renders it. 
+ * @param {number} index - Retrieved index of the book that needs removal 
+ */
 function removeBook(index) {
     myLibrary.splice(index,1);
     render();
@@ -110,12 +124,11 @@ newBookButton.addEventListener('click', () => {
 
 
 //added some pre-loaded books so it looks better and to test all is working
-const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '295', false);
+const book1 = new Book('The Hobbit', 'J.R.R Tolkien', '320', false);
 const book2 = new Book('Peter Capusotto: El Libro', 'Diego Capusotto & Pedro Saborido', '237', true);
 const book3 = new Book('World War Z', 'Max Brooks', '457', true);
-const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', false);
+const book4 = new Book('El Eternauta', 'Hector G Oesterheld & Francisco Solano Lopez', '351', true);
 myLibrary.push(book1);
-myLibrary.push(book2);
 myLibrary.push(book3);
 myLibrary.push(book4);
 render();
