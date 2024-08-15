@@ -1,66 +1,90 @@
 @font-face {
-    font-family: "Norse Bold";
-    src: url(fonts/Norse-Bold.otf);
+  font-family: "Norse Bold";
+  src: url(fonts/Norse-Bold.otf);
 }
 
 @font-face {
-    font-family: "Roboto Medium";
-    src: url(fonts/Roboto/Roboto-Medium.ttf);
+  font-family: "Roboto Medium";
+  src: url(fonts/Roboto/Roboto-Medium.ttf);
 }
 
 body {
-    margin: 0px;
-    background-color: lightgray;
+  margin: 0px;
+  background-color: lightgray;
 }
 
 .header {
-    width: 120%;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    background-color: rgb(89, 109, 72);
-    font-size: 24px;
-    font-family: "Norse Bold", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 120%;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  background-color: rgb(89, 109, 72);
+  font-size: 32px;
+  font-family: "Norse Bold", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  color: whitesmoke;
+}
+
+.header #libraryLogo {
+  height: 28px;
+  margin-top: 4px;
+  margin-left: 3%;
+  margin-right: 1%;
+}
+
+.header #odinLogo {
+  height: 30px;
+  margin-top: 3px;
 }
 
 form {
-    margin-top: 10%;
-    width: 500px;
-    height: 320px;
-    margin: 50px auto;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgb(55, 55, 55);
-    border: 3px solid whitesmoke;
+  margin-top: 10%;
+  width: 500px;
+  height: 320px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(55, 55, 55);
+  border: 3px solid whitesmoke;
 }
 
-h1,h2,h3,h4,h5 {
-    font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Roboto Medium", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 14px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
 }
 
 label {
-    font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(212, 226, 238);
-    font-size: 12px;
-    margin-bottom: 10px;
-    display: block;
+  font-family: "Roboto Medium", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: rgb(212, 226, 238);
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 input {
-    outline: none;
-    border: none;
-    font-family: "Roboto Medium", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 4px;
-    background-color: whitesmoke;
-    width: 50%;
-    padding: 8px;
-    border-radius: 10px;
+  outline: none;
+  border: none;
+  font-family: "Roboto Medium", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin-bottom: 4px;
+  background-color: whitesmoke;
+  width: 50%;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 /* input:hover {
@@ -68,68 +92,76 @@ input {
 } */
 
 input:focus {
-    outline: none;
-    border: solid 2px whitesmoke;
+  outline: none;
+  border: solid 2px whitesmoke;
 }
 
 input[type="submit"] {
-    display: block;
-    margin: auto;
-    color: whitesmoke;
-    border-radius: 4px;
-    background-color: rgb(135, 135, 135);
-    width: 20vh;
+  display: block;
+  margin: auto;
+  color: whitesmoke;
+  border-radius: 4px;
+  background-color: rgb(135, 135, 135);
+  width: 20vh;
 }
 
 #read {
-    margin-top: 0px;
-    margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 button {
-    display: block;
-    margin: auto;
-    width: 150px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: rgb(89, 109, 72);
-    border: 0px;
-    color: antiquewhite;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: rgb(89, 109, 72);
+  border: 0px;
+  color: whitesmoke;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 #library {
-    margin: 5% auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5%;
-    row-gap: 20px;
-    justify-content: center;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5%;
+  row-gap: 20px;
+  justify-content: center;
 }
 
 .bookCard {
-    border: solid 2px rgb(89, 109, 72);
-    border-radius: 10px;
-    width: 300px;
-    padding: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  border: solid 2px rgb(89, 109, 72);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 300px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition-duration: 0.3s;
+}
+
+.bookCard:hover,
+.bookCard:active {
+  transform: translateY(-5px);
 }
 
 .cardBody .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  margin: auto;
 }
 
 .buttonContainer button {
-    position: static;
-    width: 7vw;
+  position: static;
+  width: 7vw;
 }
