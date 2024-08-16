@@ -10,16 +10,20 @@
 
 body {
   margin: 0px;
+  padding: 0px;
   background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .header {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  width: 120%;
   margin-bottom: 12px;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
   background-color: rgb(89, 109, 72);
   font-size: 32px;
   font-family: "Norse Bold", "Franklin Gothic Medium", "Arial Narrow", Arial,
@@ -87,10 +91,6 @@ input {
   border-radius: 10px;
 }
 
-/* input:hover {
-    border: 1px solid whitesmoke;
-} */
-
 input:focus {
   outline: none;
   border: solid 2px whitesmoke;
@@ -112,6 +112,10 @@ input[type="submit"] {
 
 button {
   display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 50px;
   margin: auto;
   width: 150px;
   height: 30px;
@@ -128,6 +132,7 @@ button {
 
 #library {
   margin: 5% auto;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -164,4 +169,12 @@ button {
 .buttonContainer button {
   position: static;
   width: 7vw;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Roboto Medium", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 12px;
 }
